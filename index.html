@@ -26,6 +26,25 @@
     </style>
 </head>
 <body>
+    <div class = "outputText">
+        <label for="outputArea">Output</label>
+        <input type="text" name = "outputArea" id = "outputArea" value="" disabled>
+      </div>
+      
+      <div class = "inputText">
+        <label for="inputArea">Input</label>
+        <textarea name="inputArea" id="inputArea" cols="20" rows="10"></textarea>
+        <button onclick="convert(Inst_Map.get(1))" id ="Button">Click</button>
+      </div>
+      <div style="display: inline;">
+        <canvas></canvas>
+      </div>
+
+
+
+
+
+
     <table align = "right", border=1 >
         <tr>
             <th> Register Name</th>
