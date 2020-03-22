@@ -13,8 +13,8 @@ function convert(){
     for(var i = arrayInput.length-1;i> -1 ;i--){
         stringOutput  = stringOutput + " " + myMap.get(arrayInput[i]);
     }
-    myMap.set(arrayInput[1],myMap.get(arrayInput[2]) + myMap.get(arrayInput[3]) 
-                                                    )
+    myMap.set(arrayInput[1],myMap.get(arrayInput[2]) + myMap.get(arrayInput[3]))
+                                                    
     // document.getElementById
     document.getElementById(arrayInput[1]).innerHTML =myMap.get(arrayInput[1])
     document.getElementById("outputArea").value = myMap.get(arrayInput[0]).toString() + "   " +
