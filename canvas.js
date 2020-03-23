@@ -1,5 +1,5 @@
 var canvas = document.querySelector('canvas')
-
+var a=1;
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
