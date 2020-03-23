@@ -42,7 +42,7 @@ function convert(current_Inst){
                     if(stringInput[i-2]=="\n"){
                     var elem =stringInput[i-1];}
                     else{var elem = ""}
-                    while(stringInput[i] != " "&& i<stringInput.length&& stringInput[i]!="\n"){
+                    while(stringInput[i] != " "&& i<stringInput.length&& stringInput[i]!="\n"&& stringInput[i]!="(" && stringInput[i] !=")"){
                         elem += stringInput[i];
                         i++;
                     }
@@ -114,6 +114,33 @@ function convert(current_Inst){
        Inst_Map.set(1,Inst_Map.get(1)+1);
     //    console.log(Inst_Map.get(1))
     }
+    function lw_instruction(){
+        stringOutput = B_Map.get(arrayInput[0]) +" "+ B_Map.get(arrayInput[3]) +" "
+                    +B_Map.get(arrayInput[1])+" "+myMap.get(arrayInput[2]).toString(2).padStart(16,"0")
+        
+        myMap.set(arrayInput[1],choose_reg(myMap.get(arrayInput[2])))
+        document.getElementById(arrayInput[1]).innerHTML =myMap.get(arrayInput[1])
+
+        document.getElementById("outputArea").value= stringOutput
+        Inst_Map.set(1,Inst_Map.get(1)+1);
+    }
+
+    function sw_instruction(){
+        stringOutput = B_Map.get(arrayInput[0]) +" "+ B_Map.get(arrayInput[3]) +" "
+                    +B_Map.get(arrayInput[1])+" "+myMap.get(arrayInput[2]).toString(2).padStart(16,"0")
+        
+                    console.log((4* arrayInput[2]+LS_Map.get(arrayInput[3])));
+
+        set_reg(myMap.get(arrayInput[2]),myMap.get(arrayInput[1]))
+
+        LS_Map.set(arrayInput[3], LS_Map.get(arrayInput[3])+4* arrayInput[2]);
+
+        document.getElementById(arrayInput[3]).innerHTML ="0x" +
+                                    (LS_Map.get(arrayInput[3])).toString().padStart(8,"0"); 
+
+        document.getElementById("outputArea").value= stringOutput
+        Inst_Map.set(1,Inst_Map.get(1)+1);
+    }
 
     function choose_inst(){
         switch(myMap.get(arrayInput[0])){
@@ -121,6 +148,23 @@ function convert(current_Inst){
             case "addi": addi_inst = addi_instruction(); break;
             case "sub": sub_inst = sub_instruction();break;
         }        
+    }
+    function choose_reg(i){
+        switch(arrayInput[3]){
+            case "$a0": return a0[i];
+            case "$a1": return a1[i];
+            case "$a2": return a2[i];
+            case "$a3": return a3[i];
+        }
+    }
+
+    function set_reg(i,j){
+        switch(arrayInput[3]){
+            case "$a0": a0[i] = j;
+            case "$a1": a1[i] = j;
+            case "$a2": a2[i] = j;
+            case "$a3": a3[i] = j;
+        }
     }
 
     choose_inst();
