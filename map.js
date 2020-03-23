@@ -3,6 +3,8 @@ let myMap = new Map();
 myMap.set("add","add")
 myMap.set("addi","addi")
 myMap.set("sub","sub")
+myMap.set("lw","lw")
+myMap.set("sw" ,"sw")
 myMap.set("$s0",parseInt(document.getElementById("$s0").innerHTML))
 myMap.set("$s1",parseInt(document.getElementById("$s1").innerHTML))
 myMap.set("$s2",parseInt(document.getElementById("$s2").innerHTML))
@@ -102,3 +104,4 @@ var a0 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var a1 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var a2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var a3 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
