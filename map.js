@@ -51,6 +51,8 @@ let B_Map = new Map();
 B_Map.set("add","10000")
 B_Map.set("addi","01000")
 B_Map.set("sub","10010")
+B_Map.set("lw","100011")
+B_Map.set("sw","101011")
 
 
 B_Map.set("$s0","10000")
@@ -88,3 +90,15 @@ B_Map.set("$v1","00011")
 let Inst_Map = new Map();
 Inst_Map.set(1,0)
 Inst_Map.set("Stage",0)
+
+var LS_Map = new Map();
+LS_Map.set("$a0",0);
+LS_Map.set("$a1",0);
+LS_Map.set("$a2",0);
+LS_Map.set("$a3",0);
+
+var LV_Map = new Map();
+var a0 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var a1 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var a2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var a3 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
