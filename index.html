@@ -1,188 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>canvas-rsize</title>
-    <style type="text/css">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mips</title>
+      <link rel="stylesheet" href="CSS.css">
+      <style>
         canvas{
-            padding: 0;
-            margin: auto;
-            display: block;
-             width: 800px;
-            height: 500px;
-            position: absolute;
-            top: 30px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            border:1px solid black ;
+          width: 1200px;
+          height: 700px;
         }
-        body{
-            margin:0;
-        }
+      </style>
+  </head>
 
-
-    </style>
-</head>
-<body>
+  <body>
     <div class = "outputText">
-        <label for="outputArea">Output</label>
-        <input type="text" name = "outputArea" id = "outputArea" value="" disabled>
-      </div>
-      
-      <div class = "inputText">
-        <label for="inputArea">Input</label>
-        <textarea name="inputArea" id="inputArea" cols="20" rows="10"></textarea>
-        <button onclick="convert(Inst_Map.get(1))" id ="Button">Click</button>
-      </div>
-      <div style="display: inline;">
-        <canvas></canvas>
-      </div>
-
-
-
-
-
-
-    <table align = "right", border=1 >
-        <tr>
+      <label for="outputArea">Output</label>
+      <input type="text" name = "outputArea" id = "outputArea" value="" disabled>
+    </div>
+    
+    <div class = "inputText">
+      <label for="inputArea">Input</label>
+      <textarea name="inputArea" id="inputArea" cols="20" rows="10"></textarea>
+      <button onclick="convert(Inst_Map.get(1))" id ="Button">Click</button>
+    </div>
+    <div style="display: inline;">
+      <canvas></canvas>
+    </div>
+    
+    
+    <div class = "Table">
+      <table align = "right" border=1 id="lowerTable">
+          <tr>
             <th> Register Name</th>
             <th>Value</th>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>zero</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id = "$zer0">0</td>
+          </tr>
+          <tr>
             <td>$at</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$at">0</td>
+          </tr>
+          <tr>
             <td>$v0</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$v0">0</td>
+          </tr>
+          <tr>
             <td>$v1</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id ="$v1">0</td>
+          </tr>
+          <tr>
             <td>$a0</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$a0">0x00000000</td>
+          </tr>
+          <tr>
             <td>$a1</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$a1">0x00000000</td>
+          </tr>
+          <tr>
             <td>$a2</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$a2">0x00000000</td>
+          </tr>
+          <tr>
             <td>$a3</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id ="$a3">0x00000000</td>
+          </tr>
+          <tr>
             <td>$t0</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$t0">0</td>
+          </tr>
+          <tr>
             <td>$t1</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id= "$t1">0</td>
+          </tr>
+          <tr>
             <td>$t2</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$t2">0</td>
+          </tr>
+          <tr>
             <td>$t3</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$t3">0</td>
+          </tr>
+          <tr>
             <td>$t4</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$t5</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$t6</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$t7</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$s0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$s1</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$s2</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$s3</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$s4</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$s5</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id="$t4">0</td>
+          </tr>
+          <tr>
+              <td>$t5</td>
+              <td id="$t5">0</td>
+            </tr>
+            <tr>
+              <td>$t6</td>
+              <td id="$t6">0</td>
+            </tr>
+            <tr>
+              <td>$t7</td>
+              <td id="$t7">0</td>
+            </tr>
+            <tr>
+              <td>$s0</td>
+              <td id = "$s0">0</td>
+            </tr>
+            <tr>
+              <td>$s1</td>
+              <td id ="$s1">0</td>
+            </tr>
+            <tr>
+              <td>$s2</td>
+              <td id = "$s2">0</td>
+            </tr>
+            <tr>
+              <td>$s3</td>
+              <td id = "$s3">0</td>
+            </tr>
+            <tr>
+              <td>$s4</td>
+              <td id = "$s4">0</td>
+            </tr>
+            <tr>
+              <td>$s5</td>
+              <td id = "$s5">0</td>
+          </tr>
+          <tr>
             <td>$s6</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id ="$s6">0</td>
+          </tr>
+          <tr>
             <td>$s7</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id = "$s7">0</td>
+          </tr>
+          <tr>
             <td>$t8</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$t9</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$k0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$k1</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>$gp</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id = "$t8">0</td>
+          </tr>
+          <tr>
+              <td>$t9</td>
+              <td id = "$t9">0</td>
+            </tr>
+            <tr>
+              <td>$k0</td>
+              <td id = "$k0">0</td>
+            </tr>
+            <tr>
+              <td>$k1</td>
+              <td id ="$k1">0</td>
+            </tr>
+            <tr>
+              <td>$gp</td>
+              <td id = "$gp">0</td>
+          </tr>
+          <tr>
             <td>$sp</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id = "$sp">0</td>
+          </tr>
+          <tr>
             <td>$fp</td>
-            <td>0</td>
-        </tr>
-        <tr>
+            <td id = "$fp">0</td>
+          </tr>
+          <tr>
             <td>$ra</td>
-            <td>0</td>
-        </tr>
-    </table>
-    <canvas></canvas>
-    <script src="canvas.js"></script>
-    <script src="map.js"></script>
-    <script src="converter.js"></script>
-</body>
-
-</html>
+            <td id = "$ra">0</td>
+          </tr>
+        </table>
+        
+      </div>
+      
+      
+      
+      <script src="path.js"></script>
+      <!-- <script src="java.js"></script> -->
+      <script src="converter.js"></script>
+      <script src="Map.js"></script>
+      
+    </body>
+    </html>
