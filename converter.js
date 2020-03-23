@@ -22,7 +22,7 @@ function convert(current_Inst){
             Inst_Map.set(1,Inst_Map.get(1)-1)
             for(var i=0;i<stringInput.length;i++){
                 var elem ="";
-                while(stringInput[i] != " " && i<stringInput.length){
+                while(stringInput[i] != " " && i<stringInput.length&& stringInput[i] !="(" && stringInput[i] !=")"){
                     elem += stringInput[i]
                     i++;
                 }
@@ -147,6 +147,8 @@ function convert(current_Inst){
             case "add": add_inst = add_instruction(); break;
             case "addi": addi_inst = addi_instruction(); break;
             case "sub": sub_inst = sub_instruction();break;
+            case "lw" : lw_inst = lw_instruction();break;
+            case "sw" : sw_isnt = sw_instruction();break;
         }        
     }
     function choose_reg(i){
